@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 
 import CheckBox from "expo-checkbox";
 // LensData object from your code
@@ -26,25 +26,21 @@ const lensData = {
       crizal_mirror_coating_hmc_sun: 298,
     },
     add_ons: {
-      solid_tint_gradient_tint: {
-        solid_tint: 70,
-        gradient_tint: 90,
-      },
-      solid_polarized_gradient_polarized: {
-        solid_polarized: 149,
-        gradient_polarized: 209,
-      },
+      solid_tint: 70,
+      gradient_tint: 90,
+      solid_polarized: 149,
+      gradient_polarized: 209,
       any_custom_tints_colors: 130,
       transitions_gen_s: 149,
       "transitions_xtractive_2.0": 198,
-      extras: {
-        high_cyl: 40,
-        prism_charge: 60,
-        any_custom_shape_sizing: 50,
-        patient_own_frame_lab_charge_edging_mounting: 50,
-        patient_own_frame_lab_charge_drilling_mounting: 80,
-        custom_polarized_clip_on: 169,
-      },
+    },
+    extras: {
+      high_cyl: 40,
+      prism_charge: 60,
+      any_custom_shape_sizing: 50,
+      patient_own_frame_lab_charge_edging_mounting: 50,
+      patient_own_frame_lab_charge_drilling_mounting: 80,
+      custom_polarized_clip_on: 169,
     },
   },
   essilor_progressive_lens: {
@@ -69,25 +65,23 @@ const lensData = {
       crizal_mirror_coating_hmc_sun: 298,
     },
     add_ons: {
-      solid_tint_gradient_tint: {
-        solid_tint: 70,
-        gradient_tint: 90,
-      },
-      solid_polarized_gradient_polarized: {
-        solid_polarized: 149,
-        gradient_polarized: 209,
-      },
+      solid_tint: 70,
+      gradient_tint: 90,
+
+      solid_polarized: 149,
+      gradient_polarized: 209,
+
       any_custom_tints_colors: 130,
       transitions_gen_s: 149,
       "transitions_xtractive_2.0": 198,
-      extras: {
-        high_cyl: 40,
-        prism_charge: 60,
-        any_custom_shape_sizing: 50,
-        patient_own_frame_lab_charge_edging_mounting: 50,
-        patient_own_frame_lab_charge_drilling_mounting: 80,
-        custom_polarized_clip_on: 169,
-      },
+    },
+    extras: {
+      high_cyl: 40,
+      prism_charge: 60,
+      any_custom_shape_sizing: 50,
+      patient_own_frame_lab_charge_edging_mounting: 50,
+      patient_own_frame_lab_charge_drilling_mounting: 80,
+      custom_polarized_clip_on: 169,
     },
   },
   essilor_varilux_progressive_lens: {
@@ -106,25 +100,23 @@ const lensData = {
       crizal_prevencia: 298,
     },
     add_ons: {
-      solid_tint_gradient_tint: {
-        solid_tint: 70,
-        gradient_tint: 90,
-      },
-      solid_polarized_gradient_polarized: {
-        solid_polarized: 149,
-        gradient_polarized: 209,
-      },
+      solid_tint: 70,
+      gradient_tint: 90,
+
+      solid_polarized: 149,
+      gradient_polarized: 209,
+
       any_custom_tints_colors: 130,
       transitions_gen_s: 149,
       "transitions_xtractive_2.0": 198,
-      extras: {
-        high_cyl: 40,
-        prism_charge: 60,
-        any_custom_shape_sizing: 50,
-        patient_own_frame_lab_charge_edging_mounting: 50,
-        patient_own_frame_lab_charge_drilling_mounting: 80,
-        custom_polarized_clip_on: 169,
-      },
+    },
+    extras: {
+      high_cyl: 40,
+      prism_charge: 60,
+      any_custom_shape_sizing: 50,
+      patient_own_frame_lab_charge_edging_mounting: 50,
+      patient_own_frame_lab_charge_drilling_mounting: 80,
+      custom_polarized_clip_on: 169,
     },
   },
   essilor_computer_progressive_lens: {
@@ -150,14 +142,14 @@ const lensData = {
     add_ons: {
       transitions_gen_s: 149,
       "transitions_xtractive_2.0": 198,
-      extras: {
-        high_cyl: 40,
-        prism_charge: 60,
-        any_custom_shape_sizing: 50,
-        patient_own_frame_lab_charge_edging_mounting: 50,
-        patient_own_frame_lab_charge_drilling_mounting: 80,
-        custom_polarized_clip_on: 169,
-      },
+    },
+    extras: {
+      high_cyl: 40,
+      prism_charge: 60,
+      any_custom_shape_sizing: 50,
+      patient_own_frame_lab_charge_edging_mounting: 50,
+      patient_own_frame_lab_charge_drilling_mounting: 80,
+      custom_polarized_clip_on: 169,
     },
   },
   "essilor_line_bi-focal_lens": {
@@ -178,24 +170,21 @@ const lensData = {
       crizal_mirror_coating_hmc_sun: 298,
     },
     add_ons: {
-      solid_tint_gradient_tint: {
-        solid_tint: 70,
-        gradient_tint: 90,
-      },
-      solid_polarized_gradient_polarized: {
-        solid_polarized: 149,
-        gradient_polarized: 209,
-      },
+      solid_tint: 70,
+      gradient_tint: 90,
+      solid_polarized: 149,
+      gradient_polarized: 209,
+
       any_custom_tints_colors: 130,
       transitions_gen_s: 149,
-      extras: {
-        high_cyl: 40,
-        prism_charge: 60,
-        any_custom_shape_sizing: 50,
-        patient_own_frame_lab_charge_edging_mounting: 50,
-        patient_own_frame_lab_charge_drilling_mounting: 80,
-        custom_polarized_clip_on: 169,
-      },
+    },
+    extras: {
+      high_cyl: 40,
+      prism_charge: 60,
+      any_custom_shape_sizing: 50,
+      patient_own_frame_lab_charge_edging_mounting: 50,
+      patient_own_frame_lab_charge_drilling_mounting: 80,
+      custom_polarized_clip_on: 169,
     },
   },
   custom_cartier_single_vision_lens: {
@@ -212,22 +201,19 @@ const lensData = {
       ar_coating: 150,
     },
     add_ons: {
-      transitions_gen_s: {
-        gray_black_brown: 200,
-        special_colors: 300,
-      },
-      custom_engraving: {
-        "2_letters": 100,
-        "4_letters": 150,
-        more_than_4_letters: 200,
-        colour_in_engraving_gold_silver: 50,
-      },
-      extras: {
-        high_cyl: 80,
-        prism_charge: 100,
-        patient_own_frame_lab_charge_edging_mounting: 50,
-        patient_own_frame_lab_charge_drilling_mounting: 100,
-      },
+      gray_black_brown: 200,
+      special_colors: 300,
+
+      "custom_engraving 2_letters": 100,
+      "custom_engraving 4_letters": 150,
+      "custom_engraving more_than_4_letters": 200,
+      colour_in_engraving_gold_silver: 50,
+    },
+    extras: {
+      high_cyl: 80,
+      prism_charge: 100,
+      patient_own_frame_lab_charge_edging_mounting: 50,
+      patient_own_frame_lab_charge_drilling_mounting: 100,
     },
   },
   custom_cartier_progressive_lens: {
@@ -250,26 +236,34 @@ const lensData = {
         gray_black_brown: 200,
         special_colors: 300,
       },
-      custom_engraving: {
-        "2_letters": 100,
-        "4_letters": 150,
-        more_than_4_letters: 200,
-        colour_in_engraving_gold_silver: 50,
-      },
-      extras: {
-        high_cyl: 80,
-        prism_charge: 100,
-        patient_own_frame_lab_charge_edging_mounting: 50,
-        patient_own_frame_lab_charge_drilling_mounting: 100,
-      },
+
+      "custom_engraving 2_letters": 100,
+      "custom_engraving 4_letters": 150,
+      "custom_engraving more_than_4_letters": 200,
+      colour_in_engraving_gold_silver: 50,
+    },
+    extras: {
+      high_cyl: 80,
+      prism_charge: 100,
+      patient_own_frame_lab_charge_edging_mounting: 50,
+      patient_own_frame_lab_charge_drilling_mounting: 100,
     },
   },
 };
 
 export default function Lens({ navigation, route }) {
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPriceOption, setTotalPriceOption] = useState(0);
+  const [totalPriceMat, setTotalPriceMat] = useState(0);
+  const [totalPriceCoating, setTotalPriceCoating] = useState(0);
+  const [totalPriceAddons, setTotalPriceAddons] = useState(0);
+  const [totalPriceExtra, setTotalPriceExtra] = useState(0);
+
   const [selectedOptions, setSelectedOptions] = useState({});
   const [selectedOptionsMat, setSelectedOptionsMat] = useState({});
+  const [selectedOptionsCoating, setSelectedOptionsCoating] = useState({});
+  const [selectedOptionsAddons, setSelectedOptionsAddons] = useState({});
+  const [selectedOptionsExtra, setSelectedOptionsExtra] = useState({});
 
   const lensType = route.params;
 
@@ -288,7 +282,7 @@ export default function Lens({ navigation, route }) {
         newTotalPrice += lensData[lensType].options[opt];
       }
     });
-    setTotalPrice(newTotalPrice);
+    setTotalPriceOption(newTotalPrice);
   };
 
   const handleCheckBoxChangeMaterial = (option, price) => {
@@ -305,47 +299,306 @@ export default function Lens({ navigation, route }) {
         newTotalPrice += lensData[lensType].hi_index_material[opt];
       }
     });
-    setTotalPrice(newTotalPrice);
+    setTotalPriceMat(newTotalPrice);
+  };
+
+  const handleCheckBoxChangeCoating = (option, price) => {
+    const updatedOptionsCoating = {
+      ...selectedOptionsCoating,
+      [option]: !selectedOptionsCoating[option],
+    };
+    setSelectedOptionsCoating(updatedOptionsCoating);
+
+    // Calculate total price based on selected options
+    let newTotalPrice = 0;
+    Object.entries(updatedOptionsCoating).forEach(([opt, isSelected]) => {
+      if (isSelected) {
+        newTotalPrice += lensData[lensType].coatings[opt];
+      }
+    });
+    setTotalPriceCoating(newTotalPrice);
+  };
+
+  const handleCheckBoxChangeAddons = (option, price) => {
+    const updatedOptionsAddons = {
+      ...selectedOptionsAddons,
+      [option]: !selectedOptionsAddons[option],
+    };
+    setSelectedOptionsAddons(updatedOptionsAddons);
+
+    // Calculate total price based on selected options
+    let newTotalPrice = 0;
+    Object.entries(updatedOptionsAddons).forEach(([opt, isSelected]) => {
+      if (isSelected) {
+        newTotalPrice += lensData[lensType].add_ons[opt];
+      }
+    });
+    setTotalPriceAddons(newTotalPrice);
+  };
+
+  const handleCheckBoxChangeExtra = (option, price) => {
+    const updatedOptionsExtra = {
+      ...selectedOptionsExtra,
+      [option]: !selectedOptionsExtra[option],
+    };
+    setSelectedOptionsExtra(updatedOptionsExtra);
+
+    // Calculate total price based on selected options
+    let newTotalPrice = 0;
+    Object.entries(updatedOptionsExtra).forEach(([opt, isSelected]) => {
+      if (isSelected) {
+        newTotalPrice += lensData[lensType].extras[opt];
+      }
+    });
+    setTotalPriceExtra(newTotalPrice);
   };
 
   return (
-    <View style={{ flex: 1, padding: 20 }}>
-      <Text>Selected Lens Type: {lensType}</Text>
+    <ScrollView style={{ flex: 1, padding: 20 }}>
+      <Text style={{ fontSize: 22 }}>Selected Lens Type: {lensType}</Text>
 
       {/* Render options based on selected lens type */}
       {lensData[lensType] && (
         <View>
+          <Text style={{ fontSize: 20, paddingTop: 5, paddingBottom: 5 }}>
+            Option:
+          </Text>
           {Object.entries(lensData[lensType].options).map(([option, price]) => (
-            <View key={option}>
+            <View
+              key={option}
+              style={{
+                flexDirection: "row",
+                paddingBottom: 7,
+                backgroundColor: "#DDDDDD",
+                borderBottomColor: "black",
+                borderWidth: 1,
+                width: "100%",
+              }}
+            >
               <CheckBox
                 value={selectedOptions[option]}
                 onValueChange={() => handleCheckBoxChange(option, price)}
+                style={{
+                  alignSelf: "center",
+                }}
               />
-              <Text>
-                {option}::{price}
+              <Text
+                style={{
+                  fontSize: 18,
+                  alignSelf: "center",
+                  textAlign: "center",
+                  width: "80%",
+                }}
+              >
+                {option}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 18,
+
+                  marginLeft: "auto",
+                  marginRight: 5,
+                }}
+              >
+                ${price}
               </Text>
             </View>
           ))}
+          <Text style={{ fontSize: 20, paddingTop: 5, paddingBottom: 5 }}>
+            Hi Index / Material:
+          </Text>
           {Object.entries(lensData[lensType].hi_index_material).map(
             ([option, price]) => (
-              <View key={option}>
+              <View
+                key={option}
+                style={{
+                  flexDirection: "row",
+                  paddingBottom: 7,
+                  backgroundColor: "#DDDDDD",
+                  borderBottomColor: "black",
+                  borderWidth: 1,
+                  width: "100%",
+                }}
+              >
                 <CheckBox
                   value={selectedOptionsMat[option]}
                   onValueChange={() =>
                     handleCheckBoxChangeMaterial(option, price)
                   }
+                  style={{
+                    alignContent: "center",
+                  }}
                 />
-                <Text>
-                  {option}::{price}
+                <Text
+                  style={{
+                    fontSize: 18,
+                    alignSelf: "center",
+                    textAlign: "center",
+                    width: "80%",
+                  }}
+                >
+                  {option}
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 18,
+
+                    marginLeft: "auto",
+                    marginRight: 5,
+                  }}
+                >
+                  ${price}
                 </Text>
               </View>
             )
           )}
+          <Text style={{ fontSize: 20, paddingTop: 5, paddingBottom: 5 }}>
+            Coating:
+          </Text>
+          {Object.entries(lensData[lensType].coatings).map(
+            ([option, price]) => (
+              <View
+                key={option}
+                style={{
+                  flexDirection: "row",
+                  paddingBottom: 7,
+                  backgroundColor: "#DDDDDD",
+                  borderBottomColor: "black",
+                  borderWidth: 1,
+                  width: "100%",
+                }}
+              >
+                <CheckBox
+                  value={selectedOptionsCoating[option]}
+                  onValueChange={() =>
+                    handleCheckBoxChangeCoating(option, price)
+                  }
+                  style={{
+                    alignContent: "center",
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 18,
+                    alignSelf: "center",
+                    textAlign: "center",
+                    width: "80%",
+                  }}
+                >
+                  {option}
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 18,
+
+                    marginLeft: "auto",
+                    marginRight: 5,
+                  }}
+                >
+                  ${price}
+                </Text>
+              </View>
+            )
+          )}
+          <Text style={{ fontSize: 20, paddingTop: 5, paddingBottom: 5 }}>
+            add ons:
+          </Text>
+          {Object.entries(lensData[lensType].add_ons).map(([option, price]) => (
+            <View
+              key={option}
+              style={{
+                flexDirection: "row",
+                paddingBottom: 7,
+                backgroundColor: "#DDDDDD",
+                borderBottomColor: "black",
+                borderWidth: 1,
+                width: "100%",
+              }}
+            >
+              <CheckBox
+                value={selectedOptionsAddons[option]}
+                onValueChange={() => handleCheckBoxChangeAddons(option, price)}
+                style={{
+                  alignContent: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 18,
+                  alignSelf: "center",
+                  textAlign: "center",
+                  width: "80%",
+                }}
+              >
+                {option}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 18,
+
+                  marginLeft: "auto",
+                  marginRight: 5,
+                }}
+              >
+                ${price}
+              </Text>
+            </View>
+          ))}
+          <Text style={{ fontSize: 20, paddingTop: 5, paddingBottom: 5 }}>
+            Extras:
+          </Text>
+          {Object.entries(lensData[lensType].extras).map(([option, price]) => (
+            <View
+              key={option}
+              style={{
+                flexDirection: "row",
+                paddingBottom: 7,
+                backgroundColor: "#DDDDDD",
+                borderBottomColor: "black",
+                borderWidth: 1,
+                width: "100%",
+              }}
+            >
+              <CheckBox
+                value={selectedOptionsExtra[option]}
+                onValueChange={() => handleCheckBoxChangeExtra(option, price)}
+                style={{
+                  alignContent: "center",
+                }}
+              />
+              <Text
+                style={{
+                  alignSelf: "center",
+                  textAlign: "center",
+                  fontSize: 18,
+                  width: "80%",
+                }}
+              >
+                {option}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 18,
+
+                  marginLeft: "auto",
+                  marginRight: 5,
+                }}
+              >
+                ${price}
+              </Text>
+            </View>
+          ))}
         </View>
       )}
 
-      {/* Display total price */}
-      <Text>Total Price: ${totalPrice}</Text>
-    </View>
+      <Text style={{ fontSize: 20, paddingBottom: 25 }}>
+        Total Price:$
+        {totalPriceOption +
+          totalPriceCoating +
+          totalPriceMat +
+          totalPriceAddons +
+          totalPriceExtra}
+      </Text>
+    </ScrollView>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, TouchableOpacity } from "react-native";
 // Import the JSON data
 
 const lensData = {
@@ -277,11 +277,24 @@ export default function Shop({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.heading}>Select Lens:</Text>
       {Object.keys(lensData).map((lensType) => (
-        <Button
+        <TouchableOpacity
           key={lensType}
-          title={lensType}
+          style={{
+            alignItems: "center",
+            backgroundColor: "#DDDDDD",
+            width: "100%",
+            padding: 20,
+          }}
           onPress={() => handleLensSelect(lensType)}
-        />
+        >
+          <Text>{lensType}</Text>
+        </TouchableOpacity>
+        // <Button
+        //   key={lensType}
+        //   title={lensType}
+        //   color="#841584"
+        //   onPress={() => handleLensSelect(lensType)}
+        // />
       ))}
       {selectedLens && (
         <View>
