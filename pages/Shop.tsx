@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 // Import the JSON data
 
 const lensData = {
@@ -275,32 +281,41 @@ export default function Shop({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Select Lens:</Text>
-      {Object.keys(lensData).map((lensType) => (
-        <TouchableOpacity
-          key={lensType}
-          style={{
-            alignItems: "center",
-            backgroundColor: "#DDDDDD",
-            width: "100%",
-            padding: 20,
-          }}
-          onPress={() => handleLensSelect(lensType)}
-        >
-          <Text>{lensType}</Text>
-        </TouchableOpacity>
-        // <Button
-        //   key={lensType}
-        //   title={lensType}
-        //   color="#841584"
-        //   onPress={() => handleLensSelect(lensType)}
-        // />
-      ))}
-      {selectedLens && (
-        <View>
-          <Text style={styles.selectedLens}>Selected Lens: {selectedLens}</Text>
-        </View>
-      )}
+      <ImageBackground
+        resizeMode="contain"
+        source={require("../assets/EyeconceptLogo.png")}
+        style={styles.image}
+      >
+        <Text style={styles.heading}>Select Lens:</Text>
+        {Object.keys(lensData).map((lensType) => (
+          <TouchableOpacity
+            key={lensType}
+            style={{
+              alignItems: "center",
+              backgroundColor: "rgba(223, 223, 223, 0.56)",
+
+              width: "100%",
+              padding: 20,
+            }}
+            onPress={() => handleLensSelect(lensType)}
+          >
+            <Text>{lensType}</Text>
+          </TouchableOpacity>
+          // <Button
+          //   key={lensType}
+          //   title={lensType}
+          //   color="#841584"
+          //   onPress={() => handleLensSelect(lensType)}
+          // />
+        ))}
+        {selectedLens && (
+          <View>
+            <Text style={styles.selectedLens}>
+              Selected Lens: {selectedLens}
+            </Text>
+          </View>
+        )}
+      </ImageBackground>
     </View>
   );
 }
@@ -320,5 +335,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginTop: 20,
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
   },
 });

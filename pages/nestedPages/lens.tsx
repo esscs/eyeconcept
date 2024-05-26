@@ -12,9 +12,9 @@ const lensData = {
     },
     hi_index_material: {
       "polycarbonate_1.59": 50,
-      "TL 1.6": 80,
-      "TL 1.67": 190,
-      "TL 1.74": 210,
+      tl16_max_4: 80,
+      tl167_max_7: 190,
+      tl174_max_4: 210,
     },
     coatings: {
       hard_coat_hc: 49,
@@ -51,9 +51,9 @@ const lensData = {
     },
     hi_index_material: {
       "polycarbonate_1.59": 50,
-      "TL 1.6": 80,
-      "TL 1.67": 190,
-      "TL 1.74": 210,
+      tl16_max_4: 80,
+      tl167_max_7: 190,
+      tl174_max_4: 210,
     },
     coatings: {
       hard_coat_hc: 49,
@@ -92,8 +92,8 @@ const lensData = {
     },
     hi_index_material: {
       "polycarbonate_1.59": 50,
-      "TL 1.6": 80,
-      "TL 1.67": 190,
+      tl16_max_4: 80,
+      tl167_max_7: 190,
     },
     coatings: {
       crizal_rock: 249,
@@ -126,9 +126,9 @@ const lensData = {
     },
     hi_index_material: {
       "polycarbonate_1.59": 50,
-      "TL 1.6": 80,
-      "TL 1.67": 190,
-      "TL 1.74": 210,
+      tl16_max_4: 80,
+      tl167_max_7: 190,
+      tl174_max_4: 210,
     },
     coatings: {
       hard_coat_hc: 49,
@@ -153,14 +153,12 @@ const lensData = {
     },
   },
   "essilor_line_bi-focal_lens": {
-    options: {
-      "FT 28": 219,
-      "FT 35": 219,
-      "Round Seg": 219,
-    },
+    ft_28: 219,
+    ft_35: 219,
+    round_seg: 219,
     hi_index_material: {
       "polycarbonate_1.59": 50,
-      "TL 1.6": 80,
+      tl16_max_4: 80,
     },
     coatings: {
       hard_coat_hc: 49,
@@ -234,10 +232,10 @@ const lensData = {
       ar_coating: 150,
     },
     add_ons: {
-    
-      transitions_gen_s_gray_black_brown: 200,
-      transitions_gen_s_special_colors: 300,
-      
+      transitions_gen_s: {
+        gray_black_brown: 200,
+        special_colors: 300,
+      },
 
       "custom_engraving 2_letters": 100,
       "custom_engraving 4_letters": 150,
