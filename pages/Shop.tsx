@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Button, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 // Import the JSON data
 
 const lensData = {
@@ -299,7 +299,6 @@ export default function Shop({ navigation }) {
       {selectedLens && (
         <View>
           <Text style={styles.selectedLens}>Selected Lens: {selectedLens}</Text>
-          {/* Render other selection components here */}
         </View>
       )}
     </View>
