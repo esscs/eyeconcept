@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, TextInput } from "react-native";
 import lensData from "../../assets/lensData";
 import CheckBox from "expo-checkbox";
 // LensData object from your code
@@ -9,6 +9,9 @@ import CheckBox from "expo-checkbox";
 
 export default function Lens({ navigation, route }) {
   const [totalPriceOption, setTotalPriceOption] = useState(0);
+  const [customFramePrice, setCustomFramePrice] = useState(0);
+  const [discount, setDiscount] = useState(0);
+const finalPrice = ((parseFloat(totalPriceOption)+parseFloat(customFramePrice))* ((100-discount)/100))
 
   const [selectedOptions, setSelectedOptions] = useState({});
 
@@ -46,22 +49,44 @@ export default function Lens({ navigation, route }) {
 
 
            {   Object.entries(lensData[lensType][heading]).map(([option, price]) => (
-            <View key={option} style={styles.optionContainer}>
-              <CheckBox
+            <TouchableOpacity 
+            key={option} 
+            style={styles.optionContainer}
+            onPress={() => handleCheckBoxChange(heading, option, price)}
+          >              
+          <CheckBox
                 value={selectedOptions[option]}
                 onValueChange={() => handleCheckBoxChange(heading,option, price)}
                 style={styles.checkBox}
               />
               <Text style={styles.optionText}>{option}</Text>
-              <Text style={styles.priceText}>${price}</Text>
-            </View>
+              <Text style={styles.priceText}>$ {price}</Text>
+            </TouchableOpacity>
           ))}
             </View>
           ))}
+      <View style={styles.inputContainer}>
+      <TextInput
+        style={styles.input}
+        placeholder="Custom Frame Price"
+        keyboardType="numeric"
+        placeholderTextColor={"#ffffff"}
+
+        onChangeText={customFramePrice => setCustomFramePrice(customFramePrice)}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Discount (%)"
+        keyboardType="numeric"
+        placeholderTextColor={"#ffffff"}
+        onChangeText={discount => setDiscount(discount)}
+      />
+    </View>
+
 
       <Text style={styles.totalPrice}>
         Total Price:$
-        {totalPriceOption }
+        {finalPrice}
       </Text>
     </ScrollView>
   );
@@ -76,6 +101,20 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 22,
     color: "#ffffff",
+  },
+  input: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+ color:"#ffffff"
+    
+  },
+  inputContainer: {
+    
+    paddingTop: 20,
+    paddingBottom: 10,
   },
   sectionHeading: {
     fontSize: 20,
