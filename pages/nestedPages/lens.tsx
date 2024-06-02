@@ -11,7 +11,8 @@ export default function Lens({ navigation, route }) {
   const [totalPriceOption, setTotalPriceOption] = useState(0);
   const [customFramePrice, setCustomFramePrice] = useState(0);
   const [discount, setDiscount] = useState(0);
-const finalPrice = ((parseFloat(totalPriceOption)+parseFloat(customFramePrice))* ((100-discount)/100))
+  const [discountType , setDiscountType] = useState(true)
+const finalPrice = discountType?((parseFloat(totalPriceOption)+parseFloat(customFramePrice))-parseFloat(discount)):((parseFloat(totalPriceOption)+parseFloat(customFramePrice))* ((100-discount)/100))
 
   const [selectedOptions, setSelectedOptions] = useState({});
 
@@ -74,13 +75,35 @@ const finalPrice = ((parseFloat(totalPriceOption)+parseFloat(customFramePrice))*
 
         onChangeText={customFramePrice => setCustomFramePrice(customFramePrice)}
       />
+      <View style={{flexDirection:"row"}}>
       <TextInput
-        style={styles.input}
+        style={{    height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+          marginBottom: 10,
+          paddingHorizontal: 10,
+       color:"#ffffff",
+      flex:6
+      }}
         placeholder="Discount (%)"
         keyboardType="numeric"
         placeholderTextColor={"#ffffff"}
+
+      
         onChangeText={discount => setDiscount(discount)}
       />
+      <TouchableOpacity style={{flex:1}} onPress={() => {setDiscountType(!discountType)
+      }}>
+        <Text style={{color:"#ffffff",height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+          marginBottom: 10,
+          textAlign:"center",
+        textAlignVertical:"center",
+          width:"100%",
+          }}>{discountType?"$":"%"}</Text>
+      </TouchableOpacity>
+      </View>
     </View>
 
 
