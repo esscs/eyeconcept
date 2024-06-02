@@ -10,8 +10,25 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Eye Concept" component={Shop} />
-        <Stack.Screen name="Lens" component={Lens} />
+        <Stack.Screen name="Eye Concept" component={Shop}
+        options={{
+          headerStyle: {
+            backgroundColor: '#121212',
+          },
+          headerTintColor: '#ffffff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+        <Stack.Screen name="Lens" component={Lens} options={{
+          headerStyle: {
+            backgroundColor: '#121212',
+          },
+          headerTintColor: '#ffffff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
